@@ -1,4 +1,3 @@
-yes=["yes", "okay", "ok", "sure", "yeah",  "yep", "ye", "yh", "yea", "ya", "y", "yup", "uhuh", "mhm", "mhmm", "mmm", "mm", "m", "yeh", "alright", "k", "all right", "of course", "duh", "why not"]
 import string
 import random
 from Areas.alien_shop import AlienShop
@@ -9,6 +8,7 @@ from Areas.volcano import Volcano
 from Areas.wasteland import Wasteland
 from Game.player import Player
 from Game.state import GameState
+from data import GameData
 
 def main():
     player = Player()
@@ -49,7 +49,7 @@ def main():
         while ready==False:
             are_you_ready=input("So, are you ready? ")
             are_you_ready=are_you_ready.lower()
-            if are_you_ready in yes:
+            if are_you_ready in GameData.yes:
                 ready=True
             else:
                 print("Oh. Tell me when you're ready then.")
